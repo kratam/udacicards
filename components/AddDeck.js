@@ -47,6 +47,7 @@ class AddDeck extends Component {
               onPress={this.handleSubmit}
               primary
               style={{ marginTop: 16, alignSelf: 'center' }}
+              disabled={!this.state.title.length}
             >
               <Text> Add deck </Text>
             </Button>

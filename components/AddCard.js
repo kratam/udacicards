@@ -58,8 +58,11 @@ class AddCard extends Component {
               onPress={this.handleSubmit}
               primary
               style={{ marginTop: 16, alignSelf: 'center' }}
+              disabled={
+                !this.state.question.length || !this.state.answer.length
+              }
             >
-              <Text> Add deck </Text>
+              <Text> Add card </Text>
             </Button>
           </Form>
         </Content>
