@@ -11,19 +11,21 @@ import {
   Text,
   H1,
 } from 'native-base'
-import { NavigationActions } from 'react-navigation'
+// import { NavigationActions } from 'react-navigation'
 import { addDeck } from '../actions'
+import { getDeckByTitle } from '../utils/api'
 
 class AddDeck extends Component {
   state = {
     title: '',
   }
 
-  handleSubmit = () => {
+  handleSubmit = async () => {
     const { dispatch, navigation } = this.props
     const { title } = this.state
-    dispatch(addDeck(title))
-    navigation.dispatch(NavigationActions.back({ key: 'AddDeck' }))
+    await dispatch(addDeck(title))
+    const deck = await getDeckByTitle(title)
+    navigation.navigate('Deck', { deck })
   }
 
   render() {
