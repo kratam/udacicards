@@ -70,6 +70,9 @@ class Quiz extends Component {
             </View>
           ) : (
             <View>
+              <Text style={{ marginBottom: 16 }}>
+                {questions.length - currentQ} questions left
+              </Text>
               <FlipCard
                 flipHorizontal
                 flipVertical={false}
