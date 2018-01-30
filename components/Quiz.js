@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { NavigationActions } from 'react-navigation'
 import { connect } from 'react-redux'
 import FlipCard from 'react-native-flip-card'
 import { Container, Content, Button, View, Text, H1 } from 'native-base'
@@ -10,6 +11,18 @@ class Quiz extends Component {
     currentQ: 0,
     correct: 0,
     finished: false,
+  }
+
+  startOver = () => {
+    this.setState({
+      finished: false,
+      correct: 0,
+      currentQ: 0,
+    })
+  }
+
+  goBack = () => {
+    this.props.navigation.dispatch(NavigationActions.back())
   }
 
   handleAnswer = isCorrect => {
@@ -42,6 +55,18 @@ class Quiz extends Component {
                   correct / questions.length * 100
                 )}%)
               </Text>
+              <Button
+                onPress={this.startOver}
+                style={{ alignSelf: 'center', marginTop: 16 }}
+              >
+                <Text>Start over</Text>
+              </Button>
+              <Button
+                onPress={this.goBack}
+                style={{ alignSelf: 'center', marginTop: 16 }}
+              >
+                <Text>Go back</Text>
+              </Button>
             </View>
           ) : (
             <View>
