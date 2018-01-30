@@ -71,8 +71,8 @@ export const MainPage = StackNavigator({
   },
   AddCard: {
     screen: AddCard,
-    title: 'Add card',
     navigationOptions: {
+      title: 'Add card',
       headerTintColor: white,
       headerStyle: {
         backgroundColor: black,
@@ -82,8 +82,8 @@ export const MainPage = StackNavigator({
   },
   Quiz: {
     screen: Quiz,
-    title: 'Fun time!',
     navigationOptions: {
+      title: 'Fun time!',
       headerTintColor: white,
       headerStyle: {
         backgroundColor: black,

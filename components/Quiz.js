@@ -74,6 +74,7 @@ class Quiz extends Component {
                 flipHorizontal
                 flipVertical={false}
                 style={{ backgroundColor: white }}
+                perspective={1000}
               >
                 <View padder>
                   <H1>Question</H1>
