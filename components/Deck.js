@@ -42,6 +42,7 @@ class Deck extends Component {
               success
               style={{ alignSelf: 'center', marginTop: 36 }}
               onPress={this.startQuizPressed}
+              disabled={numberOfCards === 0}
             >
               <Icon name="play" />
               <Text>Start quiz</Text>
